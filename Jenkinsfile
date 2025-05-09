@@ -12,9 +12,12 @@ pipeline {
             steps {
                 sh '''
                 echo "Copying index.html to remote Nginx server"
-                scp -o StrictHostKeyChecking=no -i /var/lib/jenkins/.ssh/id_rsa index.html ubuntu@15.206.88.161:/var/www/html/
+                scp -o StrictHostKeyChecking=no -i /var/lib/jenkins/.ssh/id_rsa index.html ubuntu@15.206.88.161>
                 '''
-            }
+           }
         }
     }
 }
+
+
+
