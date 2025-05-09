@@ -8,11 +8,11 @@ pipeline {
             }
         }
 
-        stage('Deploy to Apache2 Server') {
+        stage('Deploy to Nginx Server') {
             steps {
                 sh '''
-                echo "Copying Index.html to remote Apache2 server"
-                scp -o StrictHostKeyChecking=no -i /var/lib/jenkins/.ssh/id_rsa Index.html ubuntu@15.206.88.161:/var/www/html/
+                echo "Copying index.html to remote Nginx server"
+                scp -o StrictHostKeyChecking=no -i /var/lib/jenkins/.ssh/id_rsa index.html ubuntu@15.206.88.161:/var/www/html/
                 '''
             }
         }
